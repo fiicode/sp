@@ -1,0 +1,1 @@
+@extends('errors/layout',['title'=>'404'])
