@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Categorie;
 use App\Model\Product;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
@@ -18,6 +19,16 @@ class ImageController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+    public function index()
+    {
+        $products = Product::where([
+            ['deleted_at', null]
+        ])->get();
+        $categories = Categorie::where([
+            ['deleted_at', null]
+        ])->get();
+        return view('admin.image', compact('products', 'categories'));
     }
 
     /**

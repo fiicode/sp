@@ -12,6 +12,7 @@
           <div class="pull-right col-md-6">
             <a href="{{route('categories.index')}}" class="btn btn-danger" title="Afficher les catégories" data-placement="bottom" data-toggle="tooltip">Categories List <i class="fa fa-arrow-circle-right"></i></a>
             <a href="{{route('products.index')}}" class="btn btn-success" title="Afficher les produits" data-placement="bottom" data-toggle="tooltip">Products List <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="{{route('uploadImage.index')}}" class="btn btn-success" title="Afficher les Categories" data-placement="bottom" data-toggle="tooltip">Image aux produits <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <br>

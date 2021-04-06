@@ -27,17 +27,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = User::where([
-            ['username', '<>', 'root'],
-            ['deleted_at', null]
-        ])->get();
-        $categorie = Categorie::where([
-            ['deleted_at', null]
-        ])->get();
-        $product = Product::where([
-            ['deleted_at', null]
-        ])->get();
+        if (isAdmin()) {
+            $user = User::where([
+                ['username', '<>', 'root'],
+                ['deleted_at', null]
+            ])->get();
+            $categorie = Categorie::where([
+                ['deleted_at', null]
+            ])->get();
+            $product = Product::where([
+                ['deleted_at', null]
+            ])->get();
+            return view('home', compact('user', 'categorie', 'product'));
+        } else {
+            return redirect()->route('user_auth_social');
+        }
 
-        return view('home', compact('user', 'categorie', 'product'));
     }
 }

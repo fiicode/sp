@@ -35,4 +35,33 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    // Réseaux sociaux
+    'facebook' => [
+        'client_id' => env ('FB_ID'),
+        'client_secret' => env ('FB_SECRET'),
+        'redirect' => env ('FB_URL'),
+    ],
+
+    'twitter' => [
+        'client_id' => env ('TWITTER_ID'),
+        'client_secret' => env ('TWITTER_SECRET'),
+        'redirect' => env ('TWITTER_URL'),
+    ],
+    'github' => [
+        'client_id' => env ('GITHUB_ID'),
+        'client_secret' => env ('GITHUB_SECRET'),
+        'redirect' => env ('GITHUB_URL'),
+    ],
+    'linkedin' => [
+        'client_id' => env ('LKI_ID'),
+        'client_secret' => env ('LKI_SECRET'),
+        'redirect' => env ('LKI_URL'),
+    ],
+
+    'google' => [
+        'client_id' => env ('GOOGLE_ID'),
+        'client_secret' => env ('GOOGLE_SECRET'),
+        'redirect' => env ('GOOGLE_URL'),
+    ],
+
 ];

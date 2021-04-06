@@ -50,8 +50,8 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => public_path('images/storage'),
-            //'root' => storage_path('app/public/spmobile'),
+//            'root' => public_path('images/storage'),
+            'root' => storage_path('app/public/storage'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],

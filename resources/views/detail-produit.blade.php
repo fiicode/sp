@@ -1,5 +1,5 @@
 @include('partials.header')
-<div class="bread-crumb bgwhite flex-w p-l-52 p-r-15 p-t-30 p-l-15-sm">
+<div class="bread-crumb bgwhite flex-w p-l-52 p-r-15 p-t-10 p-l-15-sm">
     <a href="{{url('/')}}" class="s-text16">
         Accueil
         <i class="fa fa-angle-right m-l-8 m-r-9" aria-hidden="true"></i>
@@ -14,28 +14,28 @@
         {{$produit->productName}}
 	</span>
 </div>
-<div class="container bgwhite p-t-35 p-b-80">
+<div class="container bgwhite p-t-10 p-b-80">
     <div class="flex-w flex-sb">
         <div class="w-size13 p-t-30 respon5">
             <div class="wrap-slick3 flex-sb flex-w">
                 <div class="wrap-slick3-dots"></div>
 
                 <div class="slick3">
-                    <div class="item-slick3" data-thumb="{{asset("images/storage/$produit->avatar")}}">
+                    <div class="item-slick3" data-thumb="{{asset("storage/storage/$produit->avatar")}}">
                         <div class="wrap-pic-w">
-                            <img src='{{asset("images/storage/$produit->avatar")}}' class="img-rounded img-responsive" alt="IMG-PRODUITS">
+                            <img src='{{asset("storage/storage/$produit->avatar")}}' class="img-rounded img-responsive" alt="IMG-PRODUITS">
                         </div>
                     </div>
 
-                    <div class="item-slick3" data-thumb="{{asset("images/storage/$produit->avatar2")}}">
+                    <div class="item-slick3" data-thumb="{{asset("storage/storage/$produit->avatar2")}}">
                         <div class="wrap-pic-w">
-                            <img src='{{asset("images/storage/$produit->avatar2")}}' class="img-rounded img-responsive" alt="IMG-PRODUITS">
+                            <img src='{{asset("storage/storage/$produit->avatar2")}}' class="img-rounded img-responsive" alt="IMG-PRODUITS">
                         </div>
                     </div>
 
-                    <div class="item-slick3" data-thumb="{{asset("images/storage/$produit->avatar3")}}">
+                    <div class="item-slick3" data-thumb="{{asset("storage/storage/$produit->avatar3")}}">
                         <div class="wrap-pic-w">
-                            <img src='{{asset("images/storage/$produit->avatar3")}}' class="img-rounded img-responsive" alt="IMG-PRODUITS">
+                            <img src='{{asset("storage/storage/$produit->avatar3")}}' class="img-rounded img-responsive" alt="IMG-PRODUITS">
                         </div>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                 <div class="item-slick2 p-l-15 p-r-15">
                     <div class="block2">
                         <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                            <img src="{{asset("images/storage/$produit->avatar")}}" alt="IMG-PRODUCT" width="300" height="300">
+                            <img src="{{asset("storage/storage/$produit->avatar")}}" alt="IMG-PRODUCT" width="300" height="300">
 
                             <div class="block2-overlay trans-0-4">
                                 <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">

@@ -30,11 +30,13 @@ class ProduitsController extends Controller
         if (is_numeric($id)) {
             $produit = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
                 ->where('deleted_at', null)
+                ->where('avatar', '!=', '')
                 ->where('id', $id)->get()->first();
             if ($produit) {
                 $categorie = $produit->categorie['categorieName'];
                 $brothers = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
                     ->where('deleted_at', null)
+                    ->where('avatar', '!=', '')
                     ->where('categorie_id', $produit->categorie_id)->orderBy('id', 'desc')->get();
                 return view('detail-produit', compact('produit', 'categorie', 'brothers'));
             }

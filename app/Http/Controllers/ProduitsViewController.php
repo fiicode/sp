@@ -33,6 +33,7 @@ class ProduitsViewController extends Controller
         $categorieName = Categorie::select('id', 'categorieName')->where('deleted_at', null)->where('categorieName', $categorie)->get()->first();
         $produits = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
             ->where('deleted_at', null)
+            ->where('avatar', '!=', '')
             //->orderBy('productName', 'asc')
             ->inRandomOrder()
             ->paginate($this->page);
@@ -54,6 +55,7 @@ class ProduitsViewController extends Controller
         }
         $produits = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
             ->where('deleted_at', null)
+            ->where('avatar', '!=', '')
             ->where('categorie_id', $categorieName->id)
             ->orderBy('productName', 'asc')
             ->paginate($this->page);
@@ -65,6 +67,7 @@ class ProduitsViewController extends Controller
         $produits = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
             ->where('productName', 'like', "{$famille}%")
             ->where('deleted_at', null)
+            ->where('avatar', '!=', '')
             ->orderBy('productName', 'asc')->paginate($this->page);
         $active = ($produits->first())->categorie['categorieName'];
         return redirect()->route('sp', ['categorie' => strtolower($active)])->with('produits', $produits);
@@ -73,11 +76,19 @@ class ProduitsViewController extends Controller
         $produits = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
             ->where('description', 'like', "%{$request['recherche']}%")
             ->where('deleted_at', null)
+            ->where('avatar', '!=', '')
             ->orderBy('productName', 'asc')->paginate($this->page);
         if (count($produits) > 0) {
             $active = ($produits->first())->categorie['categorieName'];
             return redirect()->route('sp', ['categorie' => strtolower($active)])->with('produits', $produits);
         }
         return redirect()->route('sp', ['categorie' => 'Tous'])->with('error', $request['recherche']);
+    }
+
+    public function about() {
+        return view('terms', ['about' => 'about']);
+    }
+    public function legal() {
+        return view('terms', ['legal' => 'legal']);
     }
 }

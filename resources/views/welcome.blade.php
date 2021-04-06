@@ -2,19 +2,7 @@
 <section class="slide1">
     <div class="wrap-slick1">
         <div class="slick1">
-            <div class="item-slick1 item3-slick1" style="background-image: url(images/slide_1.jpg);">
-                <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-                    <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
-                        <span class="text-muted">Bienvenue</span><span class="text-info"> Chez</span> <span class="text-danger">S.P Mobile</span>
-                    </h2>
-                    <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
-                        <a href="{{route('sp', ['categorie' => 'Tous'])}}" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-                            VISITEZ
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="item-slick1 item1-slick1" style="background-image: url(images/slide_2.jpg);">
+            <div class="item-slick1 item1-slick1" style="background-image: url(images/slide_4.jpg);">
                 <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
                     <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
                         SP mobile vous propose de l'originalité et de la qualité.
@@ -41,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="item-slick1 item2-slick1" style="background-image: url(images/slide_4.jpg);">
+            <div class="item-slick1 item2-slick1" style="background-image: url(images/slide_2.jpg);">
                 <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
                     <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
                         <span class="text-primary">Disponible dans nos boutiques</span>
@@ -132,7 +120,7 @@
                 <div class="item-slick2 p-l-15 p-r-15">
                     <div class="block2">
                         <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                            <img src="{{asset("images/storage/$produit->avatar")}}" alt="IMG-PRODUCT"  width="300" height="300">
+                            <img src="{{asset("storage/storage/$produit->avatar")}}" alt="IMG-PRODUCT"  width="300" height="300">
                             <div class="block2-overlay trans-0-4">
                                 <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
                                     <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
@@ -168,7 +156,7 @@
         <div class="row">
             <div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
                 <div class="hov-img-zoom pos-relative">
-                    <img src="{{asset("images/storage/" . get_promo())}}" alt="IMG-BANNER"  width="300" height="450">
+                    <img src="{{asset("storage/storage/" . get_promo())}}" alt="IMG-BANNER"  width="300" height="450">
                     <div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
                         <span class="m-text9 p-t-45 fs-20-sm">
                             La beauté de
@@ -184,7 +172,7 @@
             </div>
             <div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
                 <div class="bgwhite hov-img-zoom pos-relative p-b-20per-ssm">
-                    <img src="{{asset("images/storage/" . get_promo())}}" alt="IMG-BANNER"  width="300" height="450">
+                    <img src="{{asset("storage/storage/" . get_promo())}}" alt="IMG-BANNER"  width="300" height="450">
                     <div class="ab-t-l sizefull flex-col-c-b p-l-15 p-r-15 p-b-20">
                         <div class="t-center">
                             <span class="block2-newprice m-text9">
@@ -238,17 +226,17 @@
         <div class="row">
             <div class="col-md-4">
                 <div>
-                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FSPmobole%2Fposts%2F1938046932885513&width=350" width="350" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FSPmobileguinee%2Fposts%2F1938046932885513&width=350" width="350" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                 </div>
             </div>
             <div class="col-md-4">
                 <div>
-                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FSPmobole%2Fposts%2F1806102992746575&width=350" width="350" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FSPmobileguinee%2Fposts%2F1806102992746575&width=350" width="350" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                 </div>
             </div>
             <div class="col-md-4">
                 <div>
-                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FSPmobole%2Fposts%2F1736482916375250&width=350" width="350" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FSPmobileguinee%2Fposts%2F1736482916375250&width=350" width="350" height="580" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                 </div>
             </div>
         </div>
@@ -260,7 +248,7 @@
     <div class="flex-w">
         @foreach(get_instagram() as $produit)
         <div class="block4 wrap-pic-w">
-            <img src="{{asset("images/storage/$produit->avatar")}}" alt="IMG-INSTAGRAM">
+            <img src="{{asset("storage/storage/$produit->avatar")}}" alt="IMG-INSTAGRAM">
 
             <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
 					<span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
