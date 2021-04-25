@@ -2,6 +2,8 @@
 
 
 use App\Model\Product;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use Jenssegers\Agent\Agent;
 
 Route::get('/', function () {
