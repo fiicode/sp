@@ -22,6 +22,7 @@ class AuthSocialController extends Controller
         $clubs = Club::orderBy('club', 'asc')->get();
         return view('user.index', compact('user_info_cmpt', 'coumpt', 'clubs'));
     }
+    
     public function newMemberFifa(Request $request)
     {
 //        $this->validate($request, [

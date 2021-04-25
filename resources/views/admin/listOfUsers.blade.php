@@ -11,8 +11,8 @@
           <span class="fui-user text-red" title="Page des Users" data-placement="bottom" data-toggle="tooltip"></span>
           <div class="pull-right col-md-6">
             <a href="{{route('categories.index')}}" class="btn btn-danger" title="Afficher les catégories" data-placement="bottom" data-toggle="tooltip">Categories List <i class="fa fa-arrow-circle-right"></i></a>
-            <a href="{{route('products.index')}}" class="btn btn-success" title="Afficher les produits" data-placement="bottom" data-toggle="tooltip">Products List <i class="fa fa-arrow-circle-right"></i></a>
-              <a href="{{route('uploadImage.index')}}" class="btn btn-success" title="Afficher les Categories" data-placement="bottom" data-toggle="tooltip">Image aux produits <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('filter_produit', 'all')}}" class="btn btn-success" title="Afficher les produits" data-placement="bottom" data-toggle="tooltip">Products List <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="{{route('image', 'all')}}" class="btn btn-success" title="Afficher les Categories" data-placement="bottom" data-toggle="tooltip">Image aux produits <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <br>
@@ -45,10 +45,10 @@
                     <td class="hidden-xs hidden-sm">{{$user->created_at->format('d M Y')}}</td>
                     <td>
                       @if(Auth::user()->id == $user->id || Auth::user()->id == 1)
-                      <a class="btn btn-primary btn-xs">update</a>
-                      @if(Auth::user()->id == 1)
-                      <a href="{{route('users.destroy', ['id' => $user->id])}}" class="btn btn-danger btn-xs" data-method="DELETE" data-confirm="Etes-vous sûr"><i class="fa fa-trash-o"></i> Delete</a>
-                      @endif
+                        <a class="btn btn-primary btn-xs">update</a>
+                        @if(Auth::user()->id == 1)
+                          <a href="{{route('users.destroy', $user->id)}}" class="btn btn-danger btn-xs" data-method="DELETE" data-confirm="Etes-vous sûr"><i class="fa fa-trash-o"></i> Delete</a>
+                        @endif
                       @endif
                     </td>
                   </tr>

@@ -10,8 +10,8 @@
           <span class="fui-user text-red" title="Page des Users" data-placement="bottom" data-toggle="tooltip"></span>
           <div class="pull-right col-md-6">
             <a href="{{route('users.index')}}" class="btn btn-danger" title="Afficher les utilisateurs" data-placement="bottom" data-toggle="tooltip">Users List <i class="fa fa-arrow-circle-right"></i></a>
-            <a href="{{route('products.index')}}" class="btn btn-success" title="Afficher les produits" data-placement="bottom" data-toggle="tooltip">Products List <i class="fa fa-arrow-circle-right"></i></a>
-            <a href="{{route('uploadImage.index')}}" class="btn btn-success" title="Afficher les Categories" data-placement="bottom" data-toggle="tooltip">Image aux produits <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('filter_produit', 'all')}}" class="btn btn-success" title="Afficher les produits" data-placement="bottom" data-toggle="tooltip">Products List <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('image', 'all')}}" class="btn btn-success" title="Afficher les Categories" data-placement="bottom" data-toggle="tooltip">Image aux produits <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <br>
@@ -36,9 +36,9 @@
                 <tbody>
                 @foreach($categories as $categorie)
                     <tr>
-                        <form action="{{route('categories.update', ['id' => $categorie->id])}}" method="post">
-                    {{csrf_field()}}
-                    {{method_field('PATCH')}}
+                      <form action="{{route('categories.update', $categorie->id)}}" method="post">
+                        {{csrf_field()}}
+                        {{method_field('PATCH')}}
                         <td>{{$categorie->id}}</td>
                         <td>
                           <div class="form-group {{$errors->has('categorieName') ? 'has-error' : ''}}">
@@ -53,7 +53,7 @@
                         </td>
                       </form>
                       <td>
-                        <a href="{{route('categories.destroy', ['id' => $categorie->id])}}" class="btn btn-danger btn-xs" data-method="DELETE" data-confirm="Etes-vous sûr"><i class="fa fa-trash-o"></i> Delete</a>
+                        <a href="{{route('categories.destroy', $categorie->id)}}" class="btn btn-danger btn-xs" data-method="DELETE" data-confirm="Etes-vous sûr"><i class="fa fa-trash-o"></i> Delete</a>
                       </td>
                     </tr>
                 @endforeach

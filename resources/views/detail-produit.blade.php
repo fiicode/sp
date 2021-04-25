@@ -1,4 +1,5 @@
 @include('partials.header')
+
 <div class="bread-crumb bgwhite flex-w p-l-52 p-r-15 p-t-10 p-l-15-sm">
     <a href="{{url('/')}}" class="s-text16">
         Accueil

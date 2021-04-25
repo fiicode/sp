@@ -107,37 +107,37 @@
         });
     });
     $('.js-show-header-dropdown').on('click', function(){
-        swal("Cet option est en cours de développement!")
+        swal("Cette option est en cours de développement!")
     });
     $('.achat').on('click', function(){
-        swal("Cet option est en cours de développement!","Contactez-nous au (+224) 626 41 20 41/ 664 50 90 91 ")
+        swal("Cette option est en cours de développement!","Contactez-nous au (+224) 626 41 20 41/ 664 50 90 91 ")
     });
-    {{--var produit = null;--}}
-    {{--var field = $('#recherche');--}}
-    {{--field.keyup(function() {--}}
-        {{--if(this.value.length > 1) {--}}
-            {{--$.ajax({--}}
-                {{--method: 'POST',--}}
-                {{--url: '{{route('recherche')}}',--}}
-                {{--data: {--}}
-                    {{--_token: '{{ Session::token() }}',--}}
-                    {{--recherche: this.value--}}
-                {{--}--}}
-            {{--}).done(function (msg) {--}}
-                {{--produit = msg['recherche'];--}}
-            {{--});--}}
-            {{--field.autocomplete({--}}
-                {{--lookup: produit,--}}
-                {{--transformResult: function(response) {--}}
-                    {{--return {--}}
-                        {{--suggestions: $.map(response.myData, function(dataItem) {--}}
-                            {{--return { value: dataItem.valueField, data: dataItem.dataField };--}}
-                        {{--})--}}
-                    {{--};--}}
-                {{--}--}}
-            {{--});--}}
-        {{--}--}}
-    {{--});--}}
+    // {{--var produit = null;--}}
+    // {{--var field = $('#recherche');--}}
+    // {{--field.keyup(function() {--}}
+    //     {{--if(this.value.length > 1) {--}}
+    //         {{--$.ajax({--}}
+    //             {{--method: 'POST',--}}
+    //             {{--url: '{{route('recherche')}}',--}}
+    //             {{--data: {--}}
+    //                 {{--_token: '{{ Session::token() }}',--}}
+    //                 {{--recherche: this.value--}}
+    //             {{--}--}}
+    //         {{--}).done(function (msg) {--}}
+    //             {{--produit = msg['recherche'];--}}
+    //         {{--});--}}
+    //         {{--field.autocomplete({--}}
+    //             {{--lookup: produit,--}}
+    //             {{--transformResult: function(response) {--}}
+    //                 {{--return {--}}
+    //                     {{--suggestions: $.map(response.myData, function(dataItem) {--}}
+    //                         {{--return { value: dataItem.valueField, data: dataItem.dataField };--}}
+    //                     {{--})--}}
+    //                 {{--};--}}
+    //             {{--}--}}
+    //         {{--});--}}
+    //     {{--}--}}
+    // {{--});--}}
 </script>
 {{--<script>--}}
 {{--    mapboxgl.accessToken = 'pk.eyJ1IjoiYmFoYWJvdWJhY2tyIiwiYSI6ImNqeWVzM2JjeTE0d3ozbW56djJobnl2MHkifQ.A-IEuRQkmjdeX2X1GJglQA';--}}

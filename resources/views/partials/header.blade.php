@@ -232,7 +232,7 @@
                             Hey <b class="text-success">{{Auth::user()->name}}</b> nous livrons pour vous!
                         </span>
                     @else
-                                    <span class="topbar-child1 text-danger" style="color: #EB3D00;font-weight: bold">
+                            <span class="topbar-child1 text-danger" style="color: #EB3D00;font-weight: bold">
                             Livraison possible partout en GUINEE
                         </span>
                     @endauth

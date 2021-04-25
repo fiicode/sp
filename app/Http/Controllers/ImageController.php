@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Model\Categorie;
@@ -8,10 +7,12 @@ use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ImageController extends Controller
 {
-	    /**
+
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -20,17 +21,27 @@ class ImageController extends Controller
     {
         $this->middleware('auth');
     }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $products = Product::where([
-            ['deleted_at', null]
-        ])->get();
-        $categories = Categorie::where([
-            ['deleted_at', null]
-        ])->get();
-        return view('admin.image', compact('products', 'categories'));
+
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+       
+    }
+    
     /**
      * Display the specified resource.
      *
@@ -40,7 +51,7 @@ class ImageController extends Controller
      */
     public function show($id)
     {
-    	$avatar = Product::find($id);
+        $avatar = Product::find($id);
         $file = Storage::disk('public')->get($avatar->avatar);
 
         return new Response($file, 200);

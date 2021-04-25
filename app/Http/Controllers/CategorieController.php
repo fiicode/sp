@@ -25,7 +25,7 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        $categories = categorie::where([
+        $categories = Categorie::where([
             ['deleted_at', null]
         ])->get();
         return view('admin.listOfCategories', compact('categories'));

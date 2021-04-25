@@ -21,22 +21,9 @@
         <button class="btn mb-2 btn-outline-default">Lunettes</button>
         <button class="btn mb-2 btn-outline-default">Sacs</button>
 
-{{--        <div class="row mt-4">--}}
-{{--            <div class="col">--}}
-{{--                <label class="text-mute small">From Price</label>--}}
-{{--                <input type="text" class="form-control" placeholder="From Price" value="0">--}}
-{{--            </div>--}}
-{{--            <div class="col">--}}
-{{--                <label class="text-mute small">To Price</label>--}}
-{{--                <input type="text" class="form-control" placeholder="To Price" value="500">--}}
-{{--            </div>--}}
-{{--        </div>--}}
+
 
         <div class="row mt-4">
-{{--            <div class="col">--}}
-{{--                <label class="text-mute small">City</label>--}}
-{{--                <input type="text" class="form-control" placeholder="Enter City">--}}
-{{--            </div>--}}
             <div class="col">
                 <label class="text-mute small">Boutique</label>
                 <select class="form-control">

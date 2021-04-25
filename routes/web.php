@@ -1,6 +1,4 @@
 <?php
-
-
 use App\Model\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +13,17 @@ Route::get('/', function () {
         $produits = $items->inRandomOrder()->paginate(4);
         $menu = $items->inRandomOrder()->paginate(4);
         $favo = $items->inRandomOrder()->paginate(8);
+        
         return view('mobile.welcome', compact('produits', 'menu', 'favo'));
+    
+        // if(Auth::user()) {
+        //     dd("Hello");
+        //     return view('mobile.welcome', compact('produits', 'menu', 'favo'));
+        // }
+        // dd("Hello pas connecte");
+        // return view('mobile.user.login', compact('produits', 'menu', 'favo'));
+
+        
     }
     return view('welcome');
 });
@@ -31,7 +39,6 @@ Route::group(['namespace' => 'Auth'], function () {
 Route::get('terms/about', 'ProduitsViewController@about')->name('about');
 Route::get('terms/legal', 'ProduitsViewController@legal')->name('legal');
 
-
 Auth::routes();
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/home', 'HomeController@index')->name('home');
@@ -45,6 +52,10 @@ Route::group(['middleware' => ['auth']], function() {
         Route::resource('categories', 'CategorieController');
         Route::resource('products', 'ProductController');
         Route::resource('uploadImage', 'ImageController');
+        Route::post('/image/all', 'ImageCategorieController@search')->name('search');
+        Route::get('/image/{categorie}', 'ImageCategorieController@index')->name('image');
+        Route::post('/produits/all', 'ImageCategorieController@store')->name('search_produit.store');
+        Route::get('/produits/{filter}', 'ProduitsViewController@index')->name('filter_produit');
     });
 });
 //Route::get('productimage/{filename}', [
