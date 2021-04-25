@@ -1,9 +1,8 @@
 @if($paginator->hasPages())
-    <div class="centered">
-        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div>
-            <h6 class="d-inline-block pagination">Un instant<br>
-                <a class="pagination__next" href="{{ $paginator->nextPageUrl() }}"></a>
-            </h6>
-        </div>
+    <div class="">
+        <a href="{{ $paginator->nextPageUrl() }}" class="btn btn-warning text-center pagination__next" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Chargement...
+        </a>
     </div>
 @endif

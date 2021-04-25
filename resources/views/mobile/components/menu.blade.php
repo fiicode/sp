@@ -74,7 +74,7 @@
                 @endif
             @endforeach
         </div>
-        <div class="row">
+        <div class="d-flex justify-content-center">
             {{$produits->links('mobile.layouts.load-menu')}}
         </div>
     </div>
