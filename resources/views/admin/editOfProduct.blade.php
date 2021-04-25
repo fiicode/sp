@@ -14,11 +14,9 @@
 
       <div class="box">
         <div class="box-header box-primary">
-          <a href="{{route('products.index')}}" class="btn btn-primary"><i class="fa fa-reply"></i></a>
+          <a href="{{route('filter_produit', 'all')}}" class="btn btn-primary"><i class="fa fa-reply"></i></a>
           <h3 class="box-title pull-right"><span class="badge badge-success">Edition </span> {{$product->productName}}</h3>
         </div>
-
-
 
 
 
@@ -29,7 +27,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="form-horizontal" action="{{route('products.update', ['id' => $product->id])}}" method="post" enctype="multipart/form-data">
+            <form class="form-horizontal" action="{{route('products.update', $product->id)}}" method="post" enctype="multipart/form-data">
             	{{csrf_field()}}
             	{{method_field('PATCH')}}
               <div class="box-body">

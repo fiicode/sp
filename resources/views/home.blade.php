@@ -40,7 +40,7 @@
                         </a>
                     </li>
                     <li title="Afficher les produits" data-placement="right" data-toggle="tooltip">
-                        <a href="{{route('products.index')}}">
+                        <a href="{{route('filter_produit', 'all')}}">
                             <div class="todo-icon fa fa-bicycle"></div>
                             <div class="todo-content">
                                 <h4 class="todo-name">
@@ -63,32 +63,32 @@
                     <input type="text" name="name" value="{{old('name')}}" class="form-control" placeholder="Name">
                     @if($errors->has('name'))
                         <span class="help-block">
-              <p>{{$errors->first('name')}}</p>
-          </span>
+                            <p>{{$errors->first('name')}}</p>
+                        </span>
                     @endif
                 </div>
                 <div class="form-group{{$errors->has('username') ? ' has-error' : ''}}">
                     <input type="text" name="username" value="{{old('username')}}" class="form-control" placeholder="Username">
                     @if($errors->has('username'))
                         <span class="help-block">
-              <p>{{$errors->first('username')}}</p>
-          </span>
+                            <p>{{$errors->first('username')}}</p>
+                        </span>
                     @endif
                 </div>
                 <div class="form-group{{$errors->has('email') ? ' has-error' : ''}}">
                     <input type="text" name="email" value="{{old('email')}}" class="form-control" placeholder="email">
                     @if($errors->has('email'))
                         <span class="help-block">
-                <p>{{$errors->first('email')}}</p>
-            </span>
+                            <p>{{$errors->first('email')}}</p>
+                        </span>
                     @endif
                 </div>
                 <div class="form-group{{$errors->has('password') ? ' has-error' : ''}}">
                     <input type="password" name="password" value="{{old('password')}}" class="form-control" placeholder="Password">
                     @if($errors->has('password'))
                         <span class="help-block">
-                <p>{{$errors->first('password')}}</p>
-            </span>
+                            <p>{{$errors->first('password')}}</p>
+                        </span>
                     @endif
                 </div>
                 <div class="form-group">
@@ -108,8 +108,8 @@
                     <input type="text" name="categorieName" value="{{old('categorieName')}}" class="form-control" placeholder="categorie">
                     @if($errors->has('categorieName'))
                         <span class="help-block">
-                  <p>{{$errors->first('categorieName')}}</p>
-              </span>
+                            <p>{{$errors->first('categorieName')}}</p>
+                        </span>
                     @endif
                 </div>
                 <button type="submit" class="btn btn-warning btn-sm">Save</button>
@@ -126,24 +126,24 @@
                     <input type="text" name="productName" value="{{old('productName')}}" class="form-control" placeholder="Product name">
                     @if($errors->has('productName'))
                         <span class="help-block">
-                    <p>{{$errors->first('productName')}}</p>
-                </span>
+                            <p>{{$errors->first('productName')}}</p>
+                        </span>
                     @endif
                 </div>
                 <div class="form-group{{$errors->has('mtt1') ? ' has-error' : ''}}">
                     <input type="text" name="mtt1" value="{{old('mtt1')}}" class="form-control" placeholder="Montant Max">
                     @if($errors->has('mtt1'))
                         <span class="help-block">
-                    <p>{{$errors->first('mtt1')}}</p>
-                </span>
+                            <p>{{$errors->first('mtt1')}}</p>
+                        </span>
                     @endif
                 </div>
                 <div class="form-group{{$errors->has('mtt2') ? ' has-error' : ''}}">
                     <input type="text" name="mtt2" value="{{old('mtt2')}}" class="form-control" placeholder="Montant Min">
                     @if($errors->has('mtt2'))
                         <span class="help-block">
-                    <p>{{$errors->first('mtt2')}}</p>
-                </span>
+                            <p>{{$errors->first('mtt2')}}</p>
+                        </span>
                     @endif
                 </div>
                 <div class="form-group{{$errors->has('categorie') ? ' has-error' : ''}}">
@@ -154,22 +154,22 @@
                     </select>
                     @if($errors->has('categorie'))
                         <span class="help-block">
-                    <p>{{$errors->first('categorie')}}</p>
-                </span>
+                            <p>{{$errors->first('categorie')}}</p>
+                        </span>
                     @endif
                 </div>
                 <div class="form-group{{$errors->has('description') ? ' has-error' : ''}}">
                     <textarea class="form-control" placeholder="Description" name="description">{{old('description')}}</textarea>
                     @if($errors->has('description'))
                         <span class="help-block">
-                    <p>{{$errors->first('description')}}</p>
-                </span>
+                            <p>{{$errors->first('description')}}</p>
+                        </span>
                     @endif
                 </div>
                 <button type="submit" class="btn btn-info">Save</button>
-                <a href="{{route('products.index')}}" class="btn btn-danger" title="Afficher les produits" data-placement="bottom" data-toggle="tooltip">Products List <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{route('filter_produit', 'all')}}" class="btn btn-danger" title="Afficher les produits" data-placement="bottom" data-toggle="tooltip">Products List <i class="fa fa-arrow-circle-right"></i></a>
             </form>
         </div>
-
+    </div>
 
 @endsection

@@ -22,12 +22,12 @@
 
                                                                                            bahaboubackr
      -->
-    <link href="css/app.css" rel="stylesheet">
-    <link href="fonts/css/font-awesome.css" rel="stylesheet">
-    <link href="fonts/ionicons/css/ionicons.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
-    <link href="css/flat-ui.css" rel="stylesheet">
-    <link href="css/sweetalert.css" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('fonts/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset('fonts/ionicons/css/ionicons.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/flat-ui.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sweetalert.css') }}" rel="stylesheet">
     {{-- <link href="css/now-ui-kit.css" rel="stylesheet"> --}}
     @yield('styles')
 </head>
@@ -48,7 +48,7 @@
       <li class="pull-rigth hidden-xs hidden-sm hidden-md"><a title="Administration du site" data-placement="bottom" data-toggle="tooltip"><i class="fa fa-tachometer"></i> ADMINISTRATION</a></li>
       @guest
         {{-- <li><a href="{{ route('login')}}">Login</a></li> --}}
-            {{-- <li><a href="{{ route('register')}}">Register</a></li> --}}
+          {{-- <li><a href="{{ route('register')}}">Register</a></li> --}}
       @else
         <form class="navbar-form navbar-left" action="#" role="search" title="Rechercher dans la Base de données" data-placement="bottom" data-toggle="tooltip">
           <div class="form-group">
@@ -103,10 +103,10 @@
     {{-- </div> --}}
 
     <!-- Scripts -->
-    <script src="js/app.js"></script>
-    <script src="js/flat-ui.min.js"></script>
-    <script src="js/sweetalert.min.js"></script>
-    {{-- <script src="js/now-ui-kit.js"></script> --}}
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/flat-ui.min.js') }}"></script>
+    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+    {{-- <script src="{{ assets('js/now-ui') }}-kit.js"></script> --}}
     @yield('scripts')
     <script type="text/javascript">
       @if(Session::has('message'))

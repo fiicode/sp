@@ -21,21 +21,17 @@ class ProductController extends Controller
     {
         $this->middleware('auth');
     }
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $products = Product::where([
-            ['deleted_at', null]
-        ])->get();
-        $categories = Categorie::where([
-            ['deleted_at', null]
-        ])->get();
-        return view('admin.listOfProducts', compact('products', 'categories'));
-    }
+    // public function index()
+    // {
+
+    // }
 
     /**
      * Show the form for creating a new resource.

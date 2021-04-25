@@ -1,13 +1,16 @@
 <?php
 
+use App\Model\Categorie;
+use App\Model\Product;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 // if (!function_exists('get_image')) {
 // 	function get_image($filename) {
 // 		$file = Storage::disk('local')->get($filename);
 // 		return new Response($file, 200);
 // 	}
-// }
-use App\Model\Categorie;
-use App\Model\Product;
+
 
 if (!function_exists('isAdmin')) {
     function isAdmin() {
@@ -28,7 +31,7 @@ if (!function_exists('isAdmin')) {
 if (!function_exists('getProducts')) {
 	function getProducts($id)
 	{
-		$products = \DB::table('products')->where('categorie_id', $id)->get();
+		$products = DB::table('products')->where('categorie_id', $id)->get();
 		if (!$products) {
 			return '';
 		}

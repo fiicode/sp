@@ -78,20 +78,19 @@
                                     {{$produit->productName}}
                                 </a></b>
                                 @if($produit->mtt1)
-                                <span class="block2-oldprice m-text7 p-r-5">
-                                {{$produit->mtt1}}
-                                </span>
+                                    <span class="block2-oldprice m-text7 p-r-5">
+                                    {{$produit->mtt1}}
+                                    </span>
                                 @endif
 
                                 @if($produit->mtt2)
-                                <span class="block2-newprice m-text8 p-r-5">
-                                {{$produit->mtt2}}
-                                </span>
+                                    <span class="block2-newprice m-text8 p-r-5">
+                                    {{$produit->mtt2}}
+                                    </span>
                                 @endif
                             </div>
                         </div>
                     </div>
-
                     @endforeach
 
                 </div>

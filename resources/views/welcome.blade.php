@@ -303,9 +303,8 @@
             </h4>
 
             <span class="s-text11 t-center">
-
                 Boutique ouverte du lundi au dimanche de 8h à 20h
-				</span>
+			</span>
         </div>
     </div>
 </section>

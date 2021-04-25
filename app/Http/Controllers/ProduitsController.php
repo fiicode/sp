@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Model\Product;
 use Illuminate\Http\Response;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Jenssegers\Agent\Agent;
 
 class ProduitsController extends Controller
 {
@@ -18,6 +21,16 @@ class ProduitsController extends Controller
     }
 
     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+       
+    }
+    /**
      * Display the specified resource.
      *
      * @param $productName
@@ -26,7 +39,7 @@ class ProduitsController extends Controller
     public function show($productName)
     {
         $productNametrim = trim(preg_replace('/\s+/', '', $productName));
-        $id = str_after($productNametrim, 'spmobile');
+        $id = Str::after($productNametrim, 'spmobile');
         if (is_numeric($id)) {
             $produit = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
                 ->where('deleted_at', null)
@@ -38,7 +51,12 @@ class ProduitsController extends Controller
                     ->where('deleted_at', null)
                     ->where('avatar', '!=', '')
                     ->where('categorie_id', $produit->categorie_id)->orderBy('id', 'desc')->get();
-                return view('detail-produit', compact('produit', 'categorie', 'brothers'));
+                $data = compact('produit', 'categorie', 'brothers');
+                $agent = new Agent();
+                if ($agent->isMobile()) {
+                    return view('mobile.components.detail-produit', $data);
+                }
+                return view('detail-produit', $data);
             }
         }
         return redirect()->route('sp', ['categorie' => 'Tous']);

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 class ProduitsViewController extends Controller
 {
     private $page = 18;
+
     /**
      * Create a new controller instance.
      *
@@ -21,6 +22,31 @@ class ProduitsViewController extends Controller
         $this->middleware('web');
     }
 
+    public function index($categorie)
+    {
+        $categories = Categorie::where([
+            ['deleted_at', null]
+        ])->limit(10)->get();
+        
+        $ps = Product::where('deleted_at', null)->latest();
+        $cn = 'all';
+        if ($categorie == $cn) {
+            $products = $ps->paginate(9);
+        } else {
+            $categorie = Categorie::where([
+                ['deleted_at', null],
+                ['categorieName', $categorie]
+            ])->get()->last();
+            if (!$categorie) {
+                return redirect()->back();
+            }
+            $products = $ps->where('categorie_id', $categorie->id)->paginate(9);
+            $cn = $categorie->categorieName;
+        }
+
+        return view('admin.listOfProducts', compact('products', 'categories', 'cn'));
+
+    }
     /**
      * @param string $categorie
      * @return Response
@@ -37,18 +63,6 @@ class ProduitsViewController extends Controller
             //->orderBy('productName', 'asc')
             ->inRandomOrder()
             ->paginate($this->page);
-//        if (isset($_GET['page'])) {
-//            $numPage = $_GET["page"];
-//            $totalPages = count($products) > 0 ? count($products) / $this->page : 0;
-//            if (is_numeric($numPage)) {
-//                $i = 1;
-//                while ($i <= $numPage) {
-//                    $this->page += $i;
-//                    $i++;
-//                }
-//                dump($_GET['page'], $totalPages, $produits->previousPageUrl(), $this->page);
-//            }
-//        }
 
         if (!$categorieName) {
             return view('produits', compact('categories', 'produits', 'active'));
@@ -65,13 +79,14 @@ class ProduitsViewController extends Controller
     public function getFamille($famille)
     {
         $produits = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
-            ->where('productName', 'like', "{$famille}%")
+            ->where('productName', 'like', "%{$famille}%")
             ->where('deleted_at', null)
             ->where('avatar', '!=', '')
             ->orderBy('productName', 'asc')->paginate($this->page);
         $active = ($produits->first())->categorie['categorieName'];
         return redirect()->route('sp', ['categorie' => strtolower($active)])->with('produits', $produits);
     }
+    
     public function recherche(Request $request) {
         $produits = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
             ->where('description', 'like', "%{$request['recherche']}%")

@@ -112,15 +112,15 @@
                                             Profession <i class="fa fa-suitcase"></i>:
                                          </span>
                                         @if(Auth::user()->confirm_competit && $user_info_cmpt)
-                                        <span class="m-text18 w-size20 w-full-sm">
-                                            {{$user_info_cmpt->profession}}
-                                        </span>
+                                            <span class="m-text18 w-size20 w-full-sm">
+                                                {{$user_info_cmpt->profession}}
+                                            </span>
                                         @else
-                                        <div class="w-size20 w-full-sm">
-                                            <div class="size13 has-error bo4 m-b-22">
-                                                <input class="sizefull s-text7 p-l-15 p-r-15 has-danger" type="text" value="{{$user_info_cmpt ? $user_info_cmpt->profession : old('profession')}}" name="profession">
+                                            <div class="w-size20 w-full-sm">
+                                                <div class="size13 has-error bo4 m-b-22">
+                                                    <input class="sizefull s-text7 p-l-15 p-r-15 has-danger" type="text" value="{{$user_info_cmpt ? $user_info_cmpt->profession : old('profession')}}" name="profession">
+                                                </div>
                                             </div>
-                                        </div>
                                         @endif
                                     </div>
                                     <div class="flex-w flex-sb bo10 p-t-10 p-b-1">
@@ -208,7 +208,7 @@
                     </div>
                 </div>
 
-                <!-- - -->
+                <!--  -->
                 <div class="tab-pane fade" id="featured" role="tabpanel">
                     <div class="row">
                         @foreach(quelques_produits() as $produit)

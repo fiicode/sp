@@ -2,7 +2,7 @@
 <div class="footer-tabs border-top text-center">
     <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+            <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
                 <i class="material-icons">store</i>
                 <small class="sr-only">Home</small>
             </a>
@@ -25,6 +25,14 @@
                 <small class="sr-only">Best</small>
             </a>
         </li>
+        {{-- @guest
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                    <i class="material-icons">person</i>
+                    <small class="sr-only">Account</small>
+                </a>
+            </li>
+        @endguest --}}
         <li class="nav-item">
             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
                 <i class="material-icons">person</i>
