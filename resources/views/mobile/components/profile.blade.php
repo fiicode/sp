@@ -16,7 +16,7 @@
     <div class="container mb-4">
         <ul class="nav nav-pills nav-fill justift-content-center mb-4" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link" id="account-tab" data-toggle="tab" href="#account" role="tab" aria-controls="account" aria-selected="true">Connexion</a>
+                <a class="nav-link" id="account-tab" data-toggle="tab" href="{{route('login') }}" role="tab" aria-controls="account" aria-selected="true">Connexion</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" id="myorders-tab" data-toggle="tab" href="#myorders" role="tab" aria-controls="myorders" aria-selected="false">Commandes</a>

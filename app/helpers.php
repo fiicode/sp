@@ -4,6 +4,7 @@ use App\Model\Categorie;
 use App\Model\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Jenssegers\Agent\Agent;
 
 // if (!function_exists('get_image')) {
 // 	function get_image($filename) {
@@ -11,6 +12,14 @@ use Illuminate\Support\Facades\DB;
 // 		return new Response($file, 200);
 // 	}
 
+
+function isMobile () {
+    $agent = new Agent();
+    if ($agent->isMobile()) {
+        return true;
+    }
+    return false;
+}
 
 if (!function_exists('isAdmin')) {
     function isAdmin() {
@@ -49,7 +58,7 @@ function get_categorie()
 }
 function quelques_produits()
 {
-    return Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar')->limit(8)
+    return Product::select('id', 'productName','slug', 'mtt1', 'mtt2', 'avatar')->limit(8)
         ->where('deleted_at', null)
         ->where('avatar', '!=', '')
         ->inRandomOrder()

@@ -99,11 +99,11 @@
 
     <!-- Your customer chat code -->
     <div class="fb-customerchat"
-         attribution=setup_tool
-         page_id="884624998227717"
-         theme_color="#ff7e29"
-         logged_in_greeting="Bonjour ! Comment pouvons-nous vous aider ? "
-         logged_out_greeting="Bonjour ! Comment pouvons-nous vous aider ? ">
+        attribution=setup_tool
+        page_id="884624998227717"
+        theme_color="#ff7e29"
+        logged_in_greeting="Bonjour ! Comment pouvons-nous vous aider ? "
+        logged_out_greeting="Bonjour ! Comment pouvons-nous vous aider ? ">
     </div>
 <?php $get_categories = get_categorie() ?>
 <header class="header1">

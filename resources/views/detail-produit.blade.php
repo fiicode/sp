@@ -24,7 +24,10 @@
                 <div class="slick3">
                     <div class="item-slick3" data-thumb="{{asset("storage/storage/$produit->avatar")}}">
                         <div class="wrap-pic-w">
-                            <img src='{{asset("storage/storage/$produit->avatar")}}' class="img-rounded img-responsive" alt="IMG-PRODUITS">
+                             <a href="{{asset("storage/storage/$produit->avatar")}}" target="_blank">
+                                <img src="{{asset("storage/storage/$produit->avatar")}}" class="img-thumbnail" alt="IMG-PRODUITS" width="100%">
+                            </a>
+                            {{-- <img src='{{asset("storage/storage/$produit->avatar")}}' class="img-rounded img-responsive" alt="IMG-PRODUITS"> --}}
                         </div>
                     </div>
 
@@ -118,6 +121,7 @@
                 <div class="item-slick2 p-l-15 p-r-15">
                     <div class="block2">
                         <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+                           
                             <img src="{{asset("storage/storage/$produit->avatar")}}" alt="IMG-PRODUCT" width="300" height="300">
 
                             <div class="block2-overlay trans-0-4">
@@ -134,7 +138,7 @@
                             </div>
                         </div>
                         <div class="block2-txt p-t-20">
-                            <a href="{{route('dp', ['productName' => strtolower(trim(preg_replace('/\s+/', '', $produit->productName))) . 'spmobile' . $produit->id])}}" class="block2-name dis-block s-text3 p-b-5">
+                            <a href="{{route('dp', ['slug' => strtolower(trim(preg_replace('/\s+/', '', $produit->slug))) ])}}" class="block2-name dis-block s-text3 p-b-5">
                                 {{$produit->productName}}
                             </a>
                             <span class="block2-oldprice m-text7 p-r-5">

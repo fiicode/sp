@@ -33,24 +33,26 @@ class ProduitsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param $productName
+     * @param $slug
      * @return Response
      */
-    public function show($productName)
-    {
-        $productNametrim = trim(preg_replace('/\s+/', '', $productName));
-        $id = Str::after($productNametrim, 'spmobile');
-        if (is_numeric($id)) {
-            $produit = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
-                ->where('deleted_at', null)
-                ->where('avatar', '!=', '')
-                ->where('id', $id)->get()->first();
+    public function show($slug)
+    {   
+        // dd($productName);
+        // $productNametrim = trim(preg_replace('/\s+/', '', $slug));
+        // $slug = Str::after($productNametrim, 'spmobile');
+        if (is_string($slug)) {
+            $produit = Product::select('id', 'productName', 'slug', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
+            ->where('deleted_at', null)
+            ->where('avatar', '!=', '')
+            ->where('slug', $slug)->get()->first();
             if ($produit) {
                 $categorie = $produit->categorie['categorieName'];
-                $brothers = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
-                    ->where('deleted_at', null)
-                    ->where('avatar', '!=', '')
-                    ->where('categorie_id', $produit->categorie_id)->orderBy('id', 'desc')->get();
+                $brothers = Product::select('id', 'productName', 'slug', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
+                ->where('deleted_at', null)
+                ->where('avatar', '!=', '')
+                ->where('categorie_id', $produit->categorie_id)->orderBy('id', 'desc')->get();
+                // dd($produit->categorie);
                 $data = compact('produit', 'categorie', 'brothers');
                 $agent = new Agent();
                 if ($agent->isMobile()) {

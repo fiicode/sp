@@ -57,7 +57,7 @@ class ProduitsViewController extends Controller
         //$products = Product::where('deleted_at', null)->get();
         $categories = Categorie::where('deleted_at', null)->orderBy('categorieName', 'asc')->get();
         $categorieName = Categorie::select('id', 'categorieName')->where('deleted_at', null)->where('categorieName', $categorie)->get()->first();
-        $produits = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
+        $produits = Product::select('id', 'productName', 'slug', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
             ->where('deleted_at', null)
             ->where('avatar', '!=', '')
             //->orderBy('productName', 'asc')
@@ -67,7 +67,7 @@ class ProduitsViewController extends Controller
         if (!$categorieName) {
             return view('produits', compact('categories', 'produits', 'active'));
         }
-        $produits = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
+        $produits = Product::select('id', 'productName', 'slug', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
             ->where('deleted_at', null)
             ->where('avatar', '!=', '')
             ->where('categorie_id', $categorieName->id)
@@ -78,7 +78,7 @@ class ProduitsViewController extends Controller
     }
     public function getFamille($famille)
     {
-        $produits = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
+        $produits = Product::select('id', 'productName', 'slug', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
             ->where('productName', 'like', "%{$famille}%")
             ->where('deleted_at', null)
             ->where('avatar', '!=', '')
@@ -88,7 +88,7 @@ class ProduitsViewController extends Controller
     }
     
     public function recherche(Request $request) {
-        $produits = Product::select('id', 'productName', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
+        $produits = Product::select('id', 'productName', 'slug', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
             ->where('description', 'like', "%{$request['recherche']}%")
             ->where('deleted_at', null)
             ->where('avatar', '!=', '')

@@ -16,15 +16,16 @@ class SocialAuthController extends Controller
         return Socialite::driver($service )->redirect();
     }
     public function callback($service) {
-//        dd(Socialite::driver($service)->stateless()->user());
-//        try {
-//            $user = Socialite::driver($service)->stateless()->user();
-//            return view( 'user.components.home')->withDetails($user)->withService($service);
-//        }catch (Exception $e) {
-//            return redirect("redirect/$service");
-//        }
-//        try {
-        $user = Socialite::driver($service)->user();
+        //        dd(Socialite::driver($service)->stateless()->user());
+        //        try {
+            //            $user = Socialite::driver($service)->stateless()->user();
+            //            return view( 'user.components.home')->withDetails($user)->withService($service);
+            //        }catch (Exception $e) {
+                //            return redirect("redirect/$service");
+                //        }
+                //        try {
+                    // dd($service);
+                    $user = Socialite::driver($service)->user();
 //        } catch (InvalidStateException $e) {
 //            $user = Socialite::driver($service)->stateless()->user();
 //        }

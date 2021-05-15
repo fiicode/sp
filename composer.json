@@ -11,11 +11,11 @@
         "laravel/framework": "^7.0",
         "laravel/helpers": "^1.4",
         "laravel/passport": "^9.3.2",
-        "laravel/socialite": "^4.1",
+        "laravel/socialite": "^5.2",
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.0"
     },
-    "require-dev": {
+    "require-dev": { 
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
@@ -42,6 +42,7 @@
     "extra": {
         "laravel": {
             "dont-discover": [
+                "laravel/dusk"
             ]
         }
     },

@@ -8,7 +8,7 @@ use App\Model\Product;
 
 class ImageCategorieController extends Controller
 {
-    private $page = 18;
+    private $page = 9;
 
     public function index($categorie)
     {

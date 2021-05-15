@@ -127,14 +127,14 @@
                                     <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
                                 </a>
                                 <div class="block2-btn-addcart w-size1 trans-0-4">
-                                    <a href="{{route('dp', ['productName' => strtolower(trim(preg_replace('/\s+/', '', $produit->productName))) . 'spmobile' . $produit->id])}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                                    <a href="{{route('dp', ['slug' => strtolower(trim(preg_replace('/\s+/', '', $produit->slug)))])}}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
                                         Acheter
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <div class="block2-txt p-t-20">
-                            <a href="{{route('dp', ['productName' => strtolower(trim(preg_replace('/\s+/', '', $produit->productName))) . 'spmobile' . $produit->id])}}" class="block2-name dis-block s-text3 p-b-5">
+                            <a href="{{route('dp', ['slug' => strtolower(trim(preg_replace('/\s+/', '', $produit->slug)))])}}" class="block2-name dis-block s-text3 p-b-5">
                                 {{$produit->productName}}
                             </a>
                             <span class="block2-oldprice m-text7 p-r-5">

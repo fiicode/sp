@@ -1,16 +1,16 @@
 @include('mobile.partials.header')
 
-<!-- Fixed navbar -->
+{{-- <!-- Fixed navbar --> --}}
 @include('mobile.partials.nav')
-<!-- Fixed navbar ends -->
+{{-- <!-- Fixed navbar ends --> --}}
 
-<!-- sidebar -->
+{{-- <!-- sidebar --> --}}
 @include('mobile.partials.sidebar')
-<!-- sidebar ends -->
+{{-- <!-- sidebar ends --> --}}
 
-<!-- Begin page content -->
+{{-- <!-- Begin page content --> --}}
 <main class="flex-shrink-0 main-container pb-0">
-    <!-- page content goes here -->
+    {{-- <!-- page content goes here --> --}}
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             @include('mobile.layouts.categorie')
@@ -25,7 +25,7 @@
                             <div class="card border-0 shadow-light text-center mb-4">
                                 <div class="card-body position-relative" style="padding: 0px">
                                         <div class="h-100px position-relative overflow-hidden" style="height: 170px;border-radius: 10px">
-                                            <a href="{{route('dp', ['productName' => strtolower(trim(preg_replace('/\s+/', '', $produit->productName))) . 'spmobile' . $produit->id])}}">
+                                            <a href="{{route('dp', ['slug' => strtolower(trim(preg_replace('/\s+/', '', $produit->slug)))])}}">
                                                 <img src="{{asset("storage/storage/$produit->avatar")}}" class="img-rounded img-responsive" alt="IMG-PRODUITS" width="270" width="100%">
                                             </a>
                                                
@@ -55,16 +55,16 @@
         @include('mobile.components.profile')
     </div>
 </main>
-<!-- End of page content -->
+{{-- <!-- End of page content --> --}}
 
 <br><br><br><br>
 
 @include('mobile.layouts.bootombar')
 
 
-<!-- scroll to top button -->
+{{-- <!-- scroll to top button --> --}}
 <button type="button" class="btn btn-default default-shadow scrollup bottom-right position-fixed btn-44"><span class="arrow_carrot-up"></span></button>
-<!-- scroll to top button ends-->
+{{-- <!-- scroll to top button ends--> --}}
 
 {{-- @include('mobile.layouts.colorsettings') --}}
 @include('mobile.partials.footer')

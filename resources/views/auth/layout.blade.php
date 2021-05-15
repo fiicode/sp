@@ -1,3 +1,12 @@
+{{-- MIOBILE --}}
+@if (isMobile())
+
+
+@include('mobile.components.login')
+
+
+@else
+{{-- DESKTOP --}}
 @include('partials.header')
 
 
@@ -26,8 +35,8 @@
                         <input class="sizefull s-text7 p-l-22 p-r-22" type="password" placeholder="********" name="password" required>
                         @if ($errors->has('password'))
                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                <strong>{{ $errors->first('password') }}</strong>
+                            </span>
                         @endif
                     </div>
 
@@ -110,3 +119,5 @@
 
 
 @include('partials.footer')
+
+@endif

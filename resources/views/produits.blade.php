@@ -67,16 +67,22 @@
                                         <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
                                     </a>
                                     <div class="block2-btn-addcart w-size1 trans-0-4">
-                                        <a href="{{route('dp', ['productName' => strtolower(trim(preg_replace('/\s+/', '', $produit->productName))) . 'spmobile' . $produit->id])}}" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" style="color: #fff">
+                                        {{-- <a href="{{route('dp', ['slug' => strtolower(trim(preg_replace('/\s+/', '', $produit->productName))) . $produit->slug])}}" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" style="color: #fff">
+                                            PLUS DE DETAIL
+                                        </a> --}}
+                                        <a href="{{route('dp', ['slug' => strtolower(trim(preg_replace('/\s+/', '', $produit->slug)))])}}" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" style="color: #fff">
                                             PLUS DE DETAIL
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div class="block2-txt p-t-10">
-                                <b><a href="{{route('dp', ['productName' => strtolower(trim(preg_replace('/\s+/', '', $produit->productName))) . 'spmobile' . $produit->id])}}" class="block2-name dis-block s-text3 p-b-5">
+                                {{-- <b><a href="{{route('dp', ['slug' => strtolower(trim(preg_replace('/\s+/', '', $produit->slug)))])}}" class="block2-name dis-block s-text3 p-b-5">
                                     {{$produit->productName}}
-                                </a></b>
+                                </a></b> --}}
+                                <b>
+                                    <a href="{{ route('dp', ['slug' => $produit->slug])}}" class="block2-name dis-block s-text3 p-b-5">{{$produit->productName}}</a>
+                                </b>
                                 @if($produit->mtt1)
                                     <span class="block2-oldprice m-text7 p-r-5">
                                     {{$produit->mtt1}}

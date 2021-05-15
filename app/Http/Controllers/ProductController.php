@@ -62,6 +62,7 @@ class ProductController extends Controller
         }
         Product::create([
             'productName' => $request['productName'],
+            'slug' => '',
             'mtt1' => $request['mtt1'],
             'mtt2' => $request['mtt2'],
             'categorie_id' => $categorie_id->id,

@@ -3,12 +3,14 @@
 @include('mobile.partials.sidebar')
 <!-- Begin page content -->
     <main class="flex-shrink-0 main-container mb-5">        
-        <div class="container-fluid h-300 my-3 py-5 position-relative overflow-hidden">
-            <div class="background">
-                <img src='{{asset("storage/storage/$produit->avatar")}}' class="img-thumbnail" alt="IMG-PRODUITS" width="100%">
-            </div>
+        <div class="container-fluid h-300 py-2 position-relative overflow-hidden">
+            {{-- <div class="background"> --}}
+                {{-- <img src='{{asset("storage/storage/$produit->avatar")}}' class="img-thumbnail" alt="IMG-PRODUITS" width="100%"> --}}
+                <a href="{{asset("storage/storage/$produit->avatar")}}" target="_blank">
+                     <img src="{{asset("storage/storage/$produit->avatar")}}" class="img-thumbnail" alt="IMG-PRODUITS" height="200" width="100%">
+                </a>
+            {{-- </div>  --}}
         </div>
-      
         <div class="container mb-4 top-100">
             <div class="card border-0 shadow-light mb-4">
                 <div class="card-body position-relative">
