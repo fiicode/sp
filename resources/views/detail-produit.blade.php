@@ -24,16 +24,16 @@
                 <div class="slick3">
                     <div class="item-slick3" data-thumb="{{asset("storage/storage/$produit->avatar")}}">
                         <div class="wrap-pic-w">
-                             <a href="{{asset("storage/storage/$produit->avatar")}}" target="_blank">
+                            {{-- <a href="{{asset("storage/storage/$produit->avatar")}}" target="_blank">
                                 <img src="{{asset("storage/storage/$produit->avatar")}}" class="img-thumbnail" alt="IMG-PRODUITS" width="100%">
-                            </a>
-                            {{-- <img src='{{asset("storage/storage/$produit->avatar")}}' class="img-rounded img-responsive" alt="IMG-PRODUITS"> --}}
+                            </a> --}}
+                            <img src='{{asset("storage/storage/$produit->avatar")}}' class="img-thumbnail img-responsive" alt="IMG-PRODUITS">
                         </div>
                     </div>
 
                     <div class="item-slick3" data-thumb="{{asset("storage/storage/$produit->avatar2")}}">
                         <div class="wrap-pic-w">
-                            <img src='{{asset("storage/storage/$produit->avatar2")}}' class="img-rounded img-responsive" alt="IMG-PRODUITS">
+                            <img src='{{asset("storage/storage/$produit->avatar2")}}' class="img-thumbnail img-responsive" alt="IMG-PRODUITS">
                         </div>
                     </div>
 
