@@ -39,13 +39,13 @@ class ProduitsController extends Controller
     public function show($slug)
     {   
         // dd($productName);
-        // $productNametrim = trim(preg_replace('/\s+/', '', $slug));
+        $slugTrim = trim(preg_replace('/\s+/', '', $slug));
         // $slug = Str::after($productNametrim, 'spmobile');
         if (is_string($slug)) {
             $produit = Product::select('id', 'productName', 'slug', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
             ->where('deleted_at', null)
             ->where('avatar', '!=', '')
-            ->where('slug', $slug)->get()->first();
+            ->where('slug', $slugTrim)->get()->first();
             if ($produit) {
                 $categorie = $produit->categorie['categorieName'];
                 $brothers = Product::select('id', 'productName', 'slug', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
