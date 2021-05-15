@@ -5,10 +5,10 @@
     <main class="flex-shrink-0 main-container mb-5">        
         <div class="container-fluid h-300 py-2 position-relative overflow-hidden">
             {{-- <div class="background"> --}}
-                {{-- <img src='{{asset("storage/storage/$produit->avatar")}}' class="img-thumbnail" alt="IMG-PRODUITS" width="100%"> --}}
-                <a href="{{asset("storage/storage/$produit->avatar")}}" target="_blank">
+                <img src='{{asset("storage/storage/$produit->avatar")}}' class="img-thumbnail" alt="IMG-PRODUITS" width="100%">
+                {{-- <a href="{{asset("storage/storage/$produit->avatar")}}" target="_blank">
                      <img src="{{asset("storage/storage/$produit->avatar")}}" class="img-thumbnail" alt="IMG-PRODUITS" height="200" width="100%">
-                </a>
+                </a> --}}
             {{-- </div>  --}}
         </div>
         <div class="container mb-4 top-100">
