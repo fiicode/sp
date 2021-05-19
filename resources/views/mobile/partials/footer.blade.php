@@ -77,7 +77,7 @@
         // options
         path: '.pagination__next',
         append: '.article',
-        history: false,
+        history: true,
     });
     $('.article-feed-favo').infiniteScroll({
         // options

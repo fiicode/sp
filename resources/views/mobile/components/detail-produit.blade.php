@@ -4,12 +4,12 @@
 <!-- Begin page content -->
     <main class="flex-shrink-0 main-container mb-5">        
         <div class="container-fluid h-300 py-2 position-relative overflow-hidden">
-            {{-- <div class="background"> --}}
+            <div class="background">
                 <img src='{{asset("storage/storage/$produit->avatar")}}' class="img-thumbnail" alt="IMG-PRODUITS" width="100%">
                 {{-- <a href="{{asset("storage/storage/$produit->avatar")}}" target="_blank">
                      <img src="{{asset("storage/storage/$produit->avatar")}}" class="img-thumbnail" alt="IMG-PRODUITS" height="200" width="100%">
                 </a> --}}
-            {{-- </div>  --}}
+            </div> 
         </div>
         <div class="container mb-4 top-100">
             <div class="card border-0 shadow-light mb-4">
@@ -49,8 +49,8 @@
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active was-validated " id="details" role="tabpanel" aria-labelledby="details-tab">
-                            <h5 class="subtitle">Information du produit</h5>
-                            <p class="text-mute">
+                            <h5 class="subtitle mb-3">Information du produit</h5>
+                            <p class="text-muted ">
                                 {{ $produit->description }}
                             </p>
                         </div>
@@ -119,4 +119,3 @@
 
 @include('mobile.partials.footer')
 
-<!-- End of page content -->

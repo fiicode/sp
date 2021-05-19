@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('styles')
-    <link rel="stylesheet" href="css/dropzone.min.css">
+    <link rel="stylesheet" href="{{asset('css/dropzone.min.css')}}">
 @stop
 @section('content')
     <div class="row">
@@ -116,10 +116,10 @@
     </div>
 @endsection
 @section('scripts')
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/dataTables.bootstrap.min.js"></script>
-    <script src="js/scriptdel.js"></script>
-    <script src="js/dropzone.min.js"></script>
+    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('js/dataTables.bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/scriptdel.js')}}"></script>
+    <script src="{{asset('js/dropzone.min.js')}}"></script>
     <script type="text/javascript">
         $(function () {
             $('#produits').DataTable();

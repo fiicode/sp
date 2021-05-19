@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\FixSlug\FixSlugController;
 use App\Model\Product;
 use App\Model\Categorie;
 use Illuminate\Http\Request;
@@ -12,6 +13,8 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    private $page = 9;
+
     /**
      * Create a new controller instance.
      *
@@ -28,10 +31,15 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-
-    // }
+    public function index()
+    {
+        $categories = Categorie::where([
+            ['deleted_at', null]
+        ])->limit(10)->get();
+        $cn = 'all';
+        $products = Product::where('deleted_at', null)->latest()->paginate($this->page);
+        return view('admin.listOfProducts', compact('categories', 'cn', 'products'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -52,9 +60,11 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'productName' => 'required|min:2',
-            'categorie' => 'required',
-            'description' => 'nullable|min:3'
+            'productName' => 'required|string|min:2',
+            'mtt1' => 'required',
+            'mtt2' => 'required',
+            'categorie' => 'required|string',
+            'description' => 'nullable|string|min:3'
         ]);
         $categorie_id = Categorie::select('id')->where('categorieName', $request['categorie'])->get()->first();
         if (!$categorie_id) {
@@ -62,7 +72,7 @@ class ProductController extends Controller
         }
         Product::create([
             'productName' => $request['productName'],
-            'slug' => '',
+            //'slug' => FixSlugController::slug(),
             'mtt1' => $request['mtt1'],
             'mtt2' => $request['mtt2'],
             'categorie_id' => $categorie_id->id,
@@ -105,9 +115,11 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $this->validate($request, [
-            'productName' => 'required|min:2',
-            'categorie' => 'required',
-            'description' => 'nullable|min:3'
+            'productName' => 'required|string|min:2',
+            'mtt1' => 'required',
+            'mtt2' => 'required',
+            'categorie' => 'required|string',
+            'description' => 'nullable|string|min:3'
         ]);
 
         $categorie_id = Categorie::select('id')->where('categorieName', $request['categorie'])->get()->first();
@@ -121,7 +133,10 @@ class ProductController extends Controller
         $product->description = $request['description'];
         $product->update();
 
+        // dd("Update");
         return redirect()->route('products.index')->with(['message' => 'Products updated!']);
+        // return redirect()->intended('home')->with(['message' => 'Product ' . $request['productName'] . ' updated!']);
+
     }
 
     /**

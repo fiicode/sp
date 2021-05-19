@@ -42,7 +42,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/home/event/member/fifa19', 'AuthSocialController@index')->name('user_auth_social');
     Route::post('/home/event/member/fifa19', 'AuthSocialController@newMemberFifa')->name('new_member_fifa');
 
-
     Route::group(['middleware' => 'admin'], function () {
         Route::get('status/user', 'StatusController@statusconfirm')->name('statusconfirm');
         Route::resource('users', 'UsersController');

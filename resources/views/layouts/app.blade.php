@@ -28,6 +28,7 @@
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('css/flat-ui.css') }}" rel="stylesheet">
     <link href="{{ asset('css/sweetalert.css') }}" rel="stylesheet">
+    
     {{-- <link href="css/now-ui-kit.css" rel="stylesheet"> --}}
     @yield('styles')
 </head>

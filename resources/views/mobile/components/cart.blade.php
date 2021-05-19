@@ -3,7 +3,7 @@
     
     <div class="container mt-5">
         <div class="centered">
-            <img src="{{asset('empty_bag.gif')}}" alt="" width="100%">
+{{--            <img src="{{asset('empty_bag.gif')}}" alt="" width="100%">--}}
         </div>
     </div>
     
