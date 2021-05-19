@@ -23,7 +23,7 @@
                         </div>
                         <br>
                         
-                        <h5 class="font-weight-light mb-1 text-mute">Content de vous revoir</h5>
+                        <h5 class="font-weight-light mb-1 text-mute">Content de te revoir</h5>
                         <h3 class="font-weight-normal mb-4"> Se connecter</h3>
 
                         <form action="{{ route('login')}}" method="POST">
@@ -50,7 +50,7 @@
                             <div class="my-3 row">
                                 <div class="col-6 col-md py-1 text-left">
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck1" checked="">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
                                         <label class="custom-control-label" for="customCheck1">Souviens-toi de moi</label>
                                     </div>
                                 </div>

@@ -78,6 +78,9 @@
 </main>
 <!-- End of page content -->
 
+<br><br><br><br>
+
+@include('mobile.layouts.bootombar')
 
 
 <!-- scroll to top button -->
