@@ -1,4 +1,4 @@
-<!-- sidebar -->
+{{--  sidebar --}}
 <div class="sidebar">
     <div class="row no-gutters">
         <div class="col-auto align-self-center">
@@ -18,9 +18,9 @@
         <a href="{{ url('/') }}" class="list-group-item list-group-item-action active"><i class="material-icons">home</i>Accueil</a>
         <a  href="#search" id="search-tab" data-toggle="tab" href="#search" role="tab" aria-controls="search" aria-selected="false"  class="list-group-item list-group-item-action" ><i class="material-icons">view_day</i>Menu</a>
         <a href="#" class="list-group-item list-group-item-action"><i class="material-icons">shopping_cart</i>Commandes</a><br><br><br>
-        <div class="divider my-5"></div><div class="divider my-5"></div><div class="divider my-5"></div>
+        <div class="divider my-5"></div><div class="divider my-5"></div><div class="divider my-5"></div><div class="divider my-5"></div>
         <hr class="mt-5 mb-3">
-        <a href="" class="list-group-item list-group-item-action"><i class="material-icons">business</i>A propos de nous</a>
+        <a href="{{route('about')}}" class="list-group-item list-group-item-action"><i class="material-icons">business</i>A propos de nous</a>
     </div>
 </div>
-<!-- sidebar ends -->
+{{-- sidebar ends  --}}

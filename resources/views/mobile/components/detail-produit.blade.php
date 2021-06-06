@@ -11,7 +11,7 @@
                 </a> --}}
             </div> 
         </div>
-        <div class="container mb-4 top-100">
+        <div class="container mt-2 top-100">
             <div class="card border-0 shadow-light mb-4">
                 <div class="card-body position-relative">
                     <div class="top-right mt-2"><button class="btn btn-link text-danger p-0"><i class="material-icons text-danger vm">favorite</i></button></div>

@@ -1,8 +1,8 @@
-{{-- <button type="button" class="btn btn-default default-shadow scrollup bottom-right position-fixed btn-44 atbottom active" style="display: block;"><span class="arrow_carrot-up"></span></button><!-- color settings ends --> --}}
-{{-- <!-- Required jquery and libraries --> --}}
+{{--  Required jquery and libraries --}}
 <script src="{{asset('mobile/assets/js/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('mobile/assets/js/popper.min.js')}}"></script> 
 <script src="{{asset('mobile/assets/vendor/bootstrap-4.4.1/js/bootstrap.min.js')}}"></script> 
+<script type="text/javascript" src="{{asset('vendor/bootstrap/js/popper.js')}}"></script>
 <script src="{{asset('mobile/js/infinite-scroll.pkgd.min.js')}}"></script>
 {{-- <!-- cookie css --> --}}
 <script src="{{asset('mobile/assets/vendor/cookie/jquery.cookie.js')}}"></script>

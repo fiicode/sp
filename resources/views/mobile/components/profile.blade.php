@@ -36,10 +36,13 @@
                                         {{--                                <div class="top-right mt-2"><button class="btn btn-link text-danger p-0"><i class="material-icons text-danger vm">favorite</i></button></div>--}}
                                         <div class="h-100px position-relative overflow-hidden" style="height: 170px;border-radius: 10px">
                                             {{--                                        <div class="background background-h-100">--}}
-                                            <img src="{{asset("storage/storage/$produit->avatar")}}" alt="" width="100%">
+                                            {{-- <img src="{{asset("storage/storage/$produit->avatar")}}" alt="" width="100%"> --}}
+                                            <a href="{{route('dp', ['slug' => strtolower(trim(preg_replace('/\s+/', '', $produit->slug)))])}}">
+                                                <img src="{{asset("storage/storage/$produit->avatar")}}" alt="" width="100%">
+                                            </a>
                                             {{--                                        </div>--}}
                                         </div>
-                                        <a href=""><p class="small pt-2">{{$produit->productName}}</p></a>
+                                        <a href="{{route('dp', ['slug' => strtolower(trim(preg_replace('/\s+/', '', $produit->slug)))])}}"><p class="small pt-2">{{$produit->productName}}</p></a>
                                         <div class="row p-1">
                                             <div class="col text-left">
                                                 <p class="text-success my-0 text-bold">{{$produit->mtt2}}</p>

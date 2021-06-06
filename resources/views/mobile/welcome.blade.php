@@ -1,15 +1,14 @@
-
 @include('mobile.partials.header')
 
-<!-- Fixed navbar -->
+{{--  Fixed navbar  --}}
 @include('mobile.partials.nav')
-<!-- Fixed navbar ends -->
+{{-- Fixed navbar ends  --}}
 
-<!-- sidebar -->
+{{-- < sidebar  --}}
 @include('mobile.partials.sidebar')
-<!-- sidebar ends -->
+{{--  sidebar ends  --}}
 
-<!-- Begin page content -->
+{{--  Begin page content  --}}
 <main class="flex-shrink-0 main-container pb-0">
     <!-- page content goes here -->
     <div class="tab-content" id="myTabContent">
@@ -83,9 +82,9 @@
 @include('mobile.layouts.bootombar')
 
 
-<!-- scroll to top button -->
+{{-- scroll to top button  --}}
 <button type="button" class="btn btn-default default-shadow scrollup bottom-right position-fixed btn-44"><span class="arrow_carrot-up"></span></button>
-<!-- scroll to top button ends-->
+{{--  scroll to top button ends --}}
 
 {{--@include('mobile.layouts.colorsettings')--}}
 @include('mobile.partials.footer')

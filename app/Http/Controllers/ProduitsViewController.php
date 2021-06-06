@@ -76,6 +76,8 @@ class ProduitsViewController extends Controller
 
         return view('produits', compact('categories', 'produits', 'active'));
     }
+
+
     public function getFamille($famille)
     {
         $produits = Product::select('id', 'productName', 'slug', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
@@ -86,7 +88,13 @@ class ProduitsViewController extends Controller
         $active = ($produits->first())->categorie['categorieName'];
         return redirect()->route('sp', ['categorie' => strtolower($active)])->with('produits', $produits);
     }
-    
+        
+    /**
+     * Fonction qui permet de faire la recherche
+     * 
+     * @param  mixed $request
+     * @return void
+     */
     public function recherche(Request $request) {
         $produits = Product::select('id', 'productName', 'slug', 'mtt1', 'mtt2', 'avatar', 'avatar2', 'avatar3', 'description', 'categorie_id')
             ->where('description', 'like', "%{$request['recherche']}%")
@@ -95,6 +103,7 @@ class ProduitsViewController extends Controller
             ->orderBy('productName', 'asc')->paginate($this->page);
         if (count($produits) > 0) {
             $active = ($produits->first())->categorie['categorieName'];
+
             return redirect()->route('sp', ['categorie' => strtolower($active)])->with('produits', $produits);
         }
         return redirect()->route('sp', ['categorie' => 'Tous'])->with('error', $request['recherche']);

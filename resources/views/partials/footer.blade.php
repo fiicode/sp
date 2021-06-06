@@ -47,7 +47,7 @@
     <hr>
     <div class="t-center p-l-15 p-r-15">
         <div class="t-center s-text8 p-t-10">
-             Tous les droits sont réservés. | <a href="{{url('/')}}">SP-Mobile</a>.
+            Tous les droits sont réservés. | <a href="{{url('/')}}">SP-Mobile</a>.
             <a href="{{route('about')}}" class="pull-left">Qui sommes-nous ?</a>
             <a href="{{route('legal')}}" class="pull-right">Politique de confidentialité.</a>
             <p>Copyright © <b class="text-danger">{{date('Y')}}</b>.</p>
@@ -91,7 +91,7 @@
 <script type="text/javascript" src="{{asset('vendor/countdowntime/countdowntime.js')}}"></script>
 <script type="text/javascript" src="{{asset('vendor/lightbox2/js/lightbox.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('vendor/sweetalert/sweetalert.min.js')}}"></script>
-{{--<script type="text/javascript" src="{{asset('js/jquery.autocomplete.min.js')}}"></script>--}}
+<script type="text/javascript" src="{{asset('js/jquery.autocomplete.min.js')}}"></script>
 <script type="text/javascript">
     $('.block2-btn-addcart').each(function(){
         var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();

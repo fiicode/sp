@@ -7,28 +7,28 @@ use App\Model\Product;
 
 class FixSlugController extends Controller
 {
-    
 
-    public  static function slug() {
-       
+
+    public  static function slug()
+    {
+
         $products = Product::get();
 
-        foreach($products as $product) {
-            
-            if($product->slug === null) {
+        foreach ($products as $product) {
+
+            if ($product->slug === null) {
                 $slug = static::post_slug($product->productName);
                 $find = Product::where([
-                    ['id', '<' , $product->id],
+                    ['id', '<', $product->id],
                     ['productName', $product->productName],
                 ])->orWhere('slug', $slug)->get();
-                
+
                 if (count($find)) {
-                    $product->slug = $slug ."-". (count($find) + 1);
+                    $product->slug = $slug . "-" . (count($find) + 1);
                 } else {
                     $product->slug = $slug;
                 }
-                
-            } 
+            }
             $product->save();
         }
     }
@@ -42,7 +42,10 @@ class FixSlugController extends Controller
 
     private static function post_slug($str)
     {
-        return strtolower(preg_replace(array('/[^a-zA-Z0-9 -]/', '/[ -]+/', '/^-|-$/'),
-            array('', '-', ''), static::remove_accent($str)));
+        return strtolower(preg_replace(
+            array('/[^a-zA-Z0-9 -]/', '/[ -]+/', '/^-|-$/'),
+            array('', '-', ''),
+            static::remove_accent($str)
+        ));
     }
 }

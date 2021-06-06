@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Laravel\Socialite\Facades\Socialite;
@@ -15,17 +16,21 @@ class SocialAuthController extends Controller
     public function redirect($service) {
         return Socialite::driver($service )->redirect();
     }
+
     public function callback($service) {
+
         //        dd(Socialite::driver($service)->stateless()->user());
-        //        try {
-            //            $user = Socialite::driver($service)->stateless()->user();
-            //            return view( 'user.components.home')->withDetails($user)->withService($service);
-            //        }catch (Exception $e) {
-                //            return redirect("redirect/$service");
-                //        }
+               try {
+                       $user = Socialite::driver($service)->stateless()->user();
+                       //return view( 'user.components.home')->withDetails($user)->withService($service);
+                   }catch (Exception $e) {
+                       dd($e);
+                           //return redirect("redirect/$service");
+                       }
                 //        try {
-                    // dd($service);
-                    $user = Socialite::driver($service)->user();
+        dd(Socialite::driver($service)->stateless());
+        $user = Socialite::driver($service)->user();
+        dd($user);
 //        } catch (InvalidStateException $e) {
 //            $user = Socialite::driver($service)->stateless()->user();
 //        }

@@ -4,6 +4,7 @@ use App\Model\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Jenssegers\Agent\Agent;
+use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
     $agent = new Agent();

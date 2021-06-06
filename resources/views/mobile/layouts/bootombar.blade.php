@@ -25,20 +25,22 @@
                 <small class="sr-only">Best</small>
             </a>
         </li>
-        {{-- @guest
+        @auth       
             <li class="nav-item">
                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
                     <i class="material-icons">person</i>
                     <small class="sr-only">Account</small>
                 </a>
             </li>
-        @endguest --}}
-        <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
-                <i class="material-icons">person</i>
-                <small class="sr-only">Account</small>
-            </a>
-        </li>
+        @endauth
+        @guest
+           <li class="nav-item">
+                <a class="nav-link"  href="{{route('login')}}"  aria-controls="profile" aria-selected="false">
+                    <i class="material-icons">person</i>
+                    <small class="sr-only">Account</small>
+                </a>
+            </li>           
+        @endguest
     </ul>
 </div>
 <!-- sticky footer tabs ends -->

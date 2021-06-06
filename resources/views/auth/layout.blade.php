@@ -1,15 +1,9 @@
 {{-- MIOBILE --}}
 @if (isMobile())
-
-
-@include('mobile.components.login')
-
-
+    @include('mobile.components.login')
 @else
 {{-- DESKTOP --}}
 @include('partials.header')
-
-
 
 <!-- content page -->
 <section class="bgwhite p-t-66 p-b-60">

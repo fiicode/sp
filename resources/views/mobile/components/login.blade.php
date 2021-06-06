@@ -18,13 +18,15 @@
                 <div class="row h-100 h-sm-auto">
                     <div class="col-12 col-md-8 col-lg-5 col-xl-4 mx-auto align-self-center text-center">
                         <div class="loader-logo">
-                                <img src="{{asset('spmobile.png')}}" class="m-0" width="85">                                
-                            <h4 class="logo-text"><span class="font-weight-bolder">  SP mobile</span><small>La technologie à votre portée</small></h4>
+                            <img src="{{asset('spmobile.png')}}" class="m-0" width="85">                                
+                            <h4 class="logo-text"><span class="font-weight-bolder">  SP mobile</span>
+                                {{-- <small>La technologie à votre portée</small> --}}
+                            </h4>
                         </div>
                         <br>
                         
-                        <h5 class="font-weight-light mb-1 text-mute">Content de te revoir</h5>
-                        <h3 class="font-weight-normal mb-4"> Se connecter</h3>
+                        <h5 class="font-weight-light mb-1">Content de te revoir</h5>
+                        <h3 class="font-weight-normal mb-5"> Se connecter</h3>
 
                         <form action="{{ route('login')}}" method="POST">
                             @csrf
@@ -63,21 +65,21 @@
                             </div>
                         </form>
                         <div class="mb-4">
-                            <p>Vous n'avez pas encore de compte?<br>Veuillez  <a href="#" class="text-white">vous inscrire</a> ici.</p>
+                            <p>Vous n'avez pas encore de compte?<br><a href="#" class="text-white">Veuillez vous inscrire ici.</a></p>
                         </div>
 
-                        <div class="col-md-5 col-sm-12 p-b-30 mx-5">
-                            <div class="row">
-                        
-                                <div class="w-size25 m-3">
-                                    <!-- Button -->
+                        <div class="col-md-5 col-sm-12 mx-3 ">
+                            <div class="row">                      
+                                <div class="w-size25 px-2">
+                                    {{-- Button --}}
                                     <a href="redirect/google"><button class="flex-c-m size2 bg-danger bo-rad-23 hov1 m-text3 trans-0-4" type="submit">
                                         <i class="fa fa-google text-md-center"></i>
                                         </button></a>
                                 </div>&nbsp;
-                                <div class="w-size25 m-3">
-                                    <!-- Button -->
-                                    <a href="redirect/github"><button style="background: grey" class="flex-c-m size2 p-l-2 bo-rad-23 hov1 m-text3 trans-0-4" type="submit">
+                                <div class="w-size25 px-2">
+                                    {{-- Button --}}
+                                    <a href="redirect/github">
+                                        <button style="background: grey" class="flex-c-m size2 p-l-2 bo-rad-23 hov1 m-text3 trans-0-4" type="submit">
                                         <i class="fa fa-github text-md-center"></i>
                                         </button></a>
                                 </div>
