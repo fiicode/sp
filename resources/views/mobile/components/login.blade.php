@@ -18,10 +18,12 @@
                 <div class="row h-100 h-sm-auto">
                     <div class="col-12 col-md-8 col-lg-5 col-xl-4 mx-auto align-self-center text-center">
                         <div class="loader-logo">
-                            <img src="{{asset('spmobile.png')}}" class="m-0" width="85">                                
-                            <h4 class="logo-text"><span class="font-weight-bolder">  SP mobile</span>
-                                {{-- <small>La technologie à votre portée</small> --}}
-                            </h4>
+                            <a href="{{ url('/') }}">
+                                <img src="{{asset('spmobile.png')}}" class="m-0" width="85">                                
+                                <h4 class="logo-text"><span class="font-weight-bolder">SP mobile</span>
+                                    {{-- <small>La technologie à votre portée</small> --}}
+                                </h4>
+                            </a>
                         </div>
                         <br>
                         
